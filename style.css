@@ -52,6 +52,7 @@ body {
   margin: 0;
   line-height: 1.7;
   min-height: 100vh;
+  text-align: center;
 }
 
 /* Scanlines overlay */
@@ -234,9 +235,10 @@ p {
   background: var(--bg-dark);
   border: 1px solid var(--border);
   border-top: 1px solid var(--green-dim);
-  top: calc(100% + 4px);
+  top: 100%;
   left: 0;
-  padding: 0.4rem 0;
+  /* padding-top crea el espacio visual sin romper el área de hover */
+  padding: 6px 0 0.4rem;
   margin: 0;
   list-style: none;
   z-index: 1000;
@@ -251,6 +253,16 @@ p {
 
 .has-dropdown:hover > .dropdown-content {
   display: block;
+}
+
+/* Puente invisible para que el mouse no pierda el hover al cruzar al submenu */
+.has-dropdown > .dropdown-content::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
 }
 
 .dropdown-right .dropdown-content {
@@ -654,7 +666,10 @@ td {
   border-top: 1px solid var(--border);
   margin-top: 1rem;
   padding: 0.55rem 0.5rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .person-first {
@@ -662,13 +677,16 @@ td {
   font-weight: 700;
   color: var(--text-bright);
   font-size: 0.85em;
+  text-align: center;
+  width: 100%;
 }
 
 .person-last {
   display: block;
   color: var(--cyan);
-  font-size: 0.75em;
-  margin-top: 0.15rem;
+  font-size: 0.72em;
+  text-align: center;
+  width: 100%;
   opacity: 0.85;
 }
 

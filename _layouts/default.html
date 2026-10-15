@@ -4,7 +4,7 @@ layout: compress
 
 {% assign title = site.data.info.name %}
 {% if page.title %}
-  {% assign title = title | append: ' — ' | append: page.title %}
+  {% assign title = title | append: ' | ' | append: page.title %}
 {% endif %}
 {% if page.is_workshops %}
   {% assign title = site.data.workshops.name %}
