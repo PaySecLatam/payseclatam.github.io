@@ -4,14 +4,14 @@ layout: compress
 
 {% assign title = site.data.info.name %}
 {% if page.title %}
-  {% assign title = title | append: ' - ' | append: page.title %}
+  {% assign title = title | append: ' — ' | append: page.title %}
 {% endif %}
 {% if page.is_workshops %}
   {% assign title = site.data.workshops.name %}
 {% endif %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="{{ site.data.info.description_short }}">
@@ -32,45 +32,18 @@ layout: compress
 
   <title>{{ title }}</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
-  <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png" sizes="32x32">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="{{ site.baseurl }}/">Home</a></li>
-      <li>
-        <a href="#">Eventos ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="{{ site.baseurl }}/events/bugcon2026/">Bugcon 2026</a></li>
-          <li>
-            <a href="#">Past Events ▾</a>
-            <ul class="dropdown-content">
-              <li><a href="{{ site.baseurl }}/events/past/pwnedcon2025/">Pwnedcon 2025</a></li>
-              <li><a href="{{ site.baseurl }}/events/bugcon2025/">Bugcon 2025</a></li>
-              <li><a href="{{ site.baseurl }}/events/tropicon2026/">Tropicon 2026</a></li>
-              <li><a href="{{ site.baseurl }}/events/past/pwnedcon2026/">Pwnedcon 2026</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
-      <li><a href="{{ site.baseurl }}/hardware">Hardware</a></li>
-        <li>
-        <a href="#">Involucrate ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="{{ site.baseurl }}/get-involve/">Como ser miembro</a></li>
-          <li><a href="{{ site.baseurl }}/sponsors">Sponsors</a></li>
-       	</ul>
-      </li>
-    </ul>
-  </nav>
+  {% include nav.html %}
 
-  <!-- MAIN CONTENT -->
   <main>
     {{ content }}
   </main>
+
+  {% include footer.html %}
 
 </body>
 </html>

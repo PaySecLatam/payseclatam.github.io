@@ -237,10 +237,16 @@ p {
   top: calc(100% + 4px);
   left: 0;
   padding: 0.4rem 0;
+  margin: 0;
+  list-style: none;
   z-index: 1000;
   min-width: 200px;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 12px rgba(0,255,65,0.05);
+}
+
+.dropdown-content li {
+  list-style: none;
 }
 
 .has-dropdown:hover > .dropdown-content {
@@ -403,7 +409,8 @@ section > * {
 .items-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1.2rem;
   margin: 1em 0;
 }
 
@@ -594,49 +601,75 @@ td {
 /* ==========================
    People / Staff
    ========================== */
+.item-small {
+  flex-grow: 0;
+  flex-basis: 17%;
+  padding: 0 1%;
+  min-width: 140px;
+}
+
+.person-link {
+  text-decoration: none;
+  display: block;
+}
+
 .person-container {
-  display: inline-block;
-  margin: 0 0 2em 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4rem 1rem 0;
+  gap: 0;
 }
 
-.person-link .person-info {
-  opacity: 0.7;
-}
-
-.person-link:hover .person-info {
-  opacity: 1;
+.person-link:hover .person-container {
+  border-color: var(--green-dim);
+  box-shadow: 0 4px 20px rgba(0,255,65,0.1);
 }
 
 .person-image {
-  width: 9em;
-  height: 9em;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 2px solid var(--green-dim);
-  box-shadow: 0 0 16px rgba(0,255,65,0.15);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0 12px rgba(0,255,65,0.12);
+  object-fit: cover;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  display: block;
 }
 
 .person-link:hover .person-image {
   border-color: var(--cyan);
-  box-shadow: 0 0 24px rgba(34,211,238,0.25);
+  box-shadow: 0 0 20px rgba(34,211,238,0.2);
 }
 
 .person-info {
-  background: rgba(0,255,65,0.04);
+  width: 100%;
+  background: var(--bg-dark);
   border-top: 1px solid var(--border);
-  margin-top: -0.3em;
-  padding: 0.4em 0;
+  margin-top: 1rem;
+  padding: 0.55rem 0.5rem;
+  text-align: center;
 }
 
 .person-first {
+  display: block;
   font-weight: 700;
   color: var(--text-bright);
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .person-last {
-  opacity: 0.7;
+  display: block;
   color: var(--cyan);
+  font-size: 0.75em;
+  margin-top: 0.15rem;
+  opacity: 0.85;
 }
 
 /* ==========================

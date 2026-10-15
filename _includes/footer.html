@@ -1,21 +1,12 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="logo-bracket">[</span>
-      <span class="logo-text">PaySec<span class="logo-accent">Latam</span></span>
-      <span class="logo-bracket">]</span>
+      <a href="{{ site.baseurl }}/" class="nav-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">PaySec<span class="logo-accent">Latam</span></span>
+        <span class="logo-bracket">]</span>
+      </a>
       <p class="footer-tagline">Payment Security Village for Latin America</p>
-    </div>
-    <div class="footer-links">
-      <h4>Eventos</h4>
-      <ul>
-        {% for event in site.data.events.upcoming %}
-          <li><a href="{{ site.baseurl }}{{ event.url }}">{{ event.name }}</a></li>
-        {% endfor %}
-        {% for event in site.data.events.past %}
-          <li><a href="{{ site.baseurl }}{{ event.url }}">{{ event.name }}</a></li>
-        {% endfor %}
-      </ul>
     </div>
     <div class="footer-links">
       <h4>Comunidad</h4>

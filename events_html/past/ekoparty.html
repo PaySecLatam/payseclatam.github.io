@@ -1,69 +1,26 @@
 ---
 layout: default
-title: Pwnedcon 2025
-permalink: /events/ekoparty2025/
+title: Ekoparty 2025
+permalink: /events/past/ekoparty2025/
 ---
 
-<nav class="main-nav tone-dark">
-  <ul>
-    <li><a href="/">Home</a></li>
-
-    <li class="dropdown">
-      <a href="#">Events</a>
-      <ul class="dropdown-content">
- <!--       <li><a href="/events/pwnedcon2025">Pwn3d!Con</a></li> -->
-        <li><a href="/events/bugcon2025">Bugcon 2025</a></li>
-      </ul>
-    </li>
- <!--
-    <li><a href="/resources">Resources</a></li>
-
-    <li class="dropdown"><a href="#">Hardware</a></li>
-
-    <li><a href="/blog">Blog</a></li>
-
-    <li class="dropdown">
-      <a href="#">Get Involved</a>
-      <ul class="dropdown-content">
-        <li><a href="/contribute">Contribute</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </li>
-
-    <li class="search-icon">
-      <a href="/search"><i class="fa fa-search"></i></a>
-    </li>
-  </ul>
- -->
-</nav>
-
-<section class="tone-light" style="margin-top: 2rem; padding: 2rem 1rem;">
+<section class="tone-hacker" style="text-align: left; padding: 1.5rem; font-family: 'Courier New', monospace; border-radius: 12px; margin: 2rem auto; max-width: 900px;">
   <div>
+    <h2 style="color:#22d3ee; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem; margin-bottom: 1rem;">
+      🔐 PaySec Latam at Ekoparty 2025
+    </h2>
     {{ site.data.info.description_long | markdownify }}
 
     {% if site.data.workshops %}
       <p>
-        We also organize <a href="/workshops">{{ site.data.workshops.name }}</a>.
+        También organizamos <a href="{{ site.baseurl }}/workshops/">{{ site.data.workshops.name }}</a>.
       </p>
     {% endif %}
-
-    {% if site.data.info.past_editions %}
-      <p>
-        Check out the past editions:
-        {% for edition in site.data.info.past_editions %}
-          <a href="{{ edition[1] }}">{{ edition[0] }}</a>
-        {% endfor %}
-      </p>
-    {% endif %}
-
-    <p>
-      Please keep in mind our <a href="/pdf/rules.pdf">rules</a>.
-    </p>
   </div>
 </section>
 
 {% if site.data.schedule %}
-  <section id="schedule">
+  <section id="schedule" style="text-align: left;">
     <h1>Schedule</h1>
     <div class="items-container">
       {% for part in site.data.schedule %}
@@ -100,19 +57,15 @@ permalink: /events/ekoparty2025/
         </div>
       {% endfor %}
       <div class="item-large">
-        <h2>I have another question...</h2>
-        <p>Contact us on <a href="https://facebook.com/{{ site.data.info.facebook }}" rel="noreferrer">Facebook</a>,
+        <h2>¿Tienes otra pregunta?</h2>
+        <p>
+          Contáctanos en <a href="https://www.linkedin.com/in/stuxnet/" rel="noreferrer">LinkedIn</a>
           {% if site.data.info.twitter %}
-            on <a href="https://twitter.com/{{ site.data.info.twitter }}" rel="noreferrer">Twitter</a>,
+            o en <a href="https://x.com/{{ site.data.info.twitter }}" rel="noreferrer">X / Twitter</a>
           {% endif %}
-          <br>
-          or by email ({{ site.data.info.email }})!
+          ({{ site.data.info.email }}).
         </p>
       </div>
     </div>
   </section>
 {% endif %}
-
-<section class="tone-dark">
-  <p>Website template made with love by <a href="https://lauzhack.com">LauzHack</a>.</p>
-</section>
