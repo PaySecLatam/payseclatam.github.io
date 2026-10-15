@@ -1,0 +1,31 @@
+upcoming:
+  - name: BugCON 2026
+    url: /events/bugcon2026/
+    date: "2026"
+    location: Mexico City, Mexico
+    status: upcoming
+
+past:
+  - name: Tropicon 2026
+    url: /events/past/tropicon2026/
+    date: "2026"
+    location: Guatemala
+    status: past
+
+  - name: BugCON 2025
+    url: /events/past/bugcon2025/
+    date: "November 2025"
+    location: Mexico City, Mexico
+    status: past
+
+  - name: Pwned!CON 2025
+    url: /events/past/pwnedcon2025/
+    date: "September 2025"
+    location: Guatemala City, Guatemala
+    status: past
+
+  - name: Ekoparty 2025
+    url: /events/past/ekoparty2025/
+    date: "2025"
+    location: Buenos Aires, Argentina
+    status: past

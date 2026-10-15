@@ -1,0 +1,41 @@
+<nav class="main-nav">
+  <div class="nav-brand">
+    <a href="{{ site.baseurl }}/" class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">PaySec<span class="logo-accent">Latam</span></span>
+      <span class="logo-bracket">]</span>
+    </a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.parentElement.classList.toggle('nav-open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Eventos <span class="caret">▾</span></a>
+      <ul class="dropdown-content">
+        {% for event in site.data.events.upcoming %}
+          <li><a href="{{ site.baseurl }}{{ event.url }}">{{ event.name }}</a></li>
+        {% endfor %}
+        <li class="dropdown-divider"></li>
+        <li class="has-dropdown dropdown-right">
+          <a href="#">Eventos Pasados <span class="caret">▾</span></a>
+          <ul class="dropdown-content">
+            {% for event in site.data.events.past %}
+              <li><a href="{{ site.baseurl }}{{ event.url }}">{{ event.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+    <li><a href="{{ site.baseurl }}/hardware">Hardware</a></li>
+    <li class="has-dropdown">
+      <a href="#">Involucrate <span class="caret">▾</span></a>
+      <ul class="dropdown-content">
+        <li><a href="{{ site.baseurl }}/get-involve/">Como ser miembro</a></li>
+        <li><a href="{{ site.baseurl }}/sponsors">Sponsors</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,68 +1,93 @@
 ---
 layout: default
 ---
-  <img class="w-100 mx-auto d-block" style="max-width: 230px;padding: 25px;padding-top: 14vh;" src="/images/meche.png" />
-  <section class="index-container">
-    <div>
-    <h2>¿Qué es La Meche de los Payments?</h2>
-    <p>
-      Las tecnologías de pago impulsan el mundo moderno, pero su seguridad sigue siendo un terreno poco explorado, especialmente en el ámbito hispanohablante.
-      <strong>La Meche de los Payments</strong> nace como un espacio para aprender, compartir y fortalecer el conocimiento sobre la seguridad en sistemas de pago, terminales PoS, tarjetas con chip y transacciones digitales.
-  </p>
-  </section>
+
+<div class="hero">
+  <div class="nfc-rings">
+    <img src="/images/meche.png" alt="PaySec Latam Logo" />
+    <span class="nfc-ring r1"></span>
+    <span class="nfc-ring r2"></span>
+    <span class="nfc-ring r3"></span>
+  </div>
+  <p>Payment Security Village — Latin America</p>
+</div>
+
 <section class="index-container">
-  <h2>Nuestros objetivos:</h2>
-  <div>
+  <h2>¿Qué es PaySec Latam?</h2>
+  <p>
+    Las tecnologías de pago impulsan el mundo moderno, pero su seguridad sigue siendo un terreno poco explorado,
+    especialmente en el ámbito hispanohablante.
+    <strong>PaySec Latam</strong> nace como un espacio para aprender, compartir y fortalecer el conocimiento
+    sobre la seguridad en sistemas de pago, terminales PoS, tarjetas con chip, NFC y transacciones digitales.
+  </p>
+</section>
+
+<section class="tone-dark">
+  <div class="index-container">
+    <h2>Nuestros objetivos</h2>
+    <div class="terminal-box">
+      <p class="terminal-prompt">Formar a la nueva generación de especialistas en seguridad de pagos en la comunidad hispana.</p>
+      <p class="terminal-prompt">Brindar experiencias prácticas y accesibles en eventos de tecnología y hacking.</p>
+      <p class="terminal-prompt">Promover la investigación en tecnologías de pago con enfoque técnico y aplicado.</p>
+      <p class="terminal-prompt">Construir una comunidad abierta de habla hispana donde el conocimiento fluya sin barreras.<span class="terminal-blink"> _</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="index-container">
+  <h2>¿Dónde puedes encontrarnos?</h2>
+  <p>
+    Estaremos de forma presencial en eventos en Guatemala, Colombia, Argentina y México.
+    Revisa la sección de <a href="{{ site.baseurl }}/events/">Eventos</a> para más información.
+  </p>
+
+  {% if site.data.events.upcoming.size > 0 %}
+    <div class="events-list" style="padding:0;">
+      {% for event in site.data.events.upcoming %}
+        <a class="event-item" href="{{ site.baseurl }}{{ event.url }}">
+          <div class="event-date">{{ event.date }}</div>
+          <div class="event-details">
+            <h3>{{ event.name }}</h3>
+            <p>{{ event.location }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+<section>
+  <div class="index-container">
+    <h2>¿Tienes alguna pregunta?</h2>
     <p>
-        Formar a la nueva generación de especialistas en seguridad de pagos en la comunidad hispana.<br />
-        Brindar experiencias prácticas y accesibles en eventos de tecnología y hacking.<br />
-        Promover la investigación en tecnologías de pago con enfoque técnico y aplicado.<br />
-        Construir una comunidad abierta de habla hispana, donde el conocimiento fluya sin barreras.<br />
-   
+      Contáctanos en
+      <a href="https://www.linkedin.com/in/stuxnet/" rel="noreferrer">LinkedIn</a>
+      {% if site.data.info.twitter %}
+        o en <a href="https://x.com/{{ site.data.info.twitter }}" rel="noreferrer">X / Twitter</a>.
+      {% endif %}
     </p>
   </div>
-  </section>
-  <section class="index-container">
-    <div>
-      <h2>¿Dónde puedes encontrarnos?</h2>
-      <p>
-        Estaremos de forma presencial en eventos que se van a realizar en Guatemala, Colombia, Argentina y Mexico. Estaremos
-        brindando mas informacion proximamente en la seccion de eventos.
-      </p>
-    </div>
 </section>
-<section>
-      <div class="item-large">
-        <h2>I have another question...</h2>
-        <p>Contact us on <a href="https://www.linkedin.com/in/stuxnet/"
-                            rel="noreferrer">linkedin</a>,
-          {% if site.data.info.twitter %}
-            on <a href="https://x.com/__stux"
-                  rel="noreferrer">X</a>.
-          {% endif %}
-        </p>
-    </div>
-</section>
+
 <section class="tone-dark">
   <h1>Staff</h1>
   <div class="items-container">
     {% for person in site.data.organizers.people %}
       <div class="item-small">
-        <a class="person-link"
-           href="{{ person.link }}"
-           rel="noreferrer">
-            <div class="person-container">
-              <img class="person-image"
-                   src="images/people/{{ person.first }}.jpg"
-                   alt="Picture of {{ person.first }}">
-              <div class="person-info">
-                <span class="person-first">{{ person.first }}</span>
-                <br>
-              </div>
+        <a class="person-link" href="{{ person.link }}" rel="noreferrer">
+          <div class="person-container">
+            <img class="person-image"
+                 src="{{ site.baseurl }}/images/people/{{ person.first }}.jpg"
+                 alt="Picture of {{ person.first }}">
+            <div class="person-info">
+              <span class="person-first">{{ person.first }}</span>
+              {% if person.role %}
+                <br><span class="person-last">{{ person.role }}</span>
+              {% endif %}
             </div>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
   </div>
 </section>

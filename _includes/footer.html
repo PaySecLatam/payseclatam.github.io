@@ -1,0 +1,46 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">PaySec<span class="logo-accent">Latam</span></span>
+      <span class="logo-bracket">]</span>
+      <p class="footer-tagline">Payment Security Village for Latin America</p>
+    </div>
+    <div class="footer-links">
+      <h4>Eventos</h4>
+      <ul>
+        {% for event in site.data.events.upcoming %}
+          <li><a href="{{ site.baseurl }}{{ event.url }}">{{ event.name }}</a></li>
+        {% endfor %}
+        {% for event in site.data.events.past %}
+          <li><a href="{{ site.baseurl }}{{ event.url }}">{{ event.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Comunidad</h4>
+      <ul>
+        <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+        <li><a href="{{ site.baseurl }}/hardware">Hardware</a></li>
+        <li><a href="{{ site.baseurl }}/get-involve/">Cómo participar</a></li>
+        <li><a href="{{ site.baseurl }}/sponsors">Sponsors</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contacto</h4>
+      <p><a href="https://www.linkedin.com/in/stuxnet/" rel="noreferrer">LinkedIn</a></p>
+      {% if site.data.info.twitter %}
+        <p><a href="https://x.com/{{ site.data.info.twitter }}" rel="noreferrer">X / Twitter</a></p>
+      {% endif %}
+      <p class="footer-email">{{ site.data.info.email }}</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-signal">
+      <span class="nfc-ring r1"></span>
+      <span class="nfc-ring r2"></span>
+      <span class="nfc-ring r3"></span>
+    </span>
+    <p>&copy; {{ 'now' | date: "%Y" }} PaySec Latam &mdash; <span class="terminal-blink">_</span></p>
+  </div>
+</footer>
