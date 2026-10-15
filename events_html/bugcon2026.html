@@ -4,7 +4,8 @@ title: BugCON 2026
 permalink: /events/bugcon2026/
 ---
 
-<section style="text-align: center; padding: 5rem 2rem;">
+<!-- Hero -->
+<section style="text-align: center; padding: 4rem 2rem 2rem;">
   <div class="nfc-rings" style="margin: 0 auto 2rem; display: inline-block; position: relative;">
     <img src="{{ site.baseurl }}/images/meche.png" alt="PaySec Latam" style="max-width: 150px; display: block; filter: drop-shadow(0 0 16px rgba(0,255,65,0.3));" />
     <span class="nfc-ring r1"></span>
@@ -12,20 +13,103 @@ permalink: /events/bugcon2026/
     <span class="nfc-ring r3"></span>
   </div>
   <h1>BugCON 2026</h1>
-  <h2>PaySec Latam — Payment Security Village</h2>
-  <p style="max-width: 600px; margin: 1.5rem auto; color: var(--text-muted);">
-    Próximamente. Síguenos en nuestras redes sociales para estar al tanto de las novedades.
-  </p>
-  <div class="terminal-box" style="max-width: 500px; margin: 2rem auto; text-align: left;">
-    <p class="terminal-prompt">status: <span style="color: var(--cyan);">COMING_SOON</span></p>
-    <p class="terminal-prompt">location: <span style="color: var(--green);">Mexico City, Mexico</span></p>
-    <p class="terminal-prompt">cfp: <span style="color: var(--green);">OPEN</span><span class="terminal-blink"> _</span></p>
+  <h2>PaySec Latam &mdash; Payment Security Village</h2>
+
+  <div class="terminal-box" style="max-width: 480px; margin: 2rem auto; text-align: left;">
+    <p class="terminal-prompt">status: <span style="color: var(--green);">ACTIVE</span></p>
+    <p class="terminal-prompt">location: <span style="color: var(--cyan);">Mexico City, Mexico</span></p>
+    <p class="terminal-prompt">year: <span style="color: var(--cyan);">2026</span><span class="terminal-blink"> _</span></p>
   </div>
-  <p>
-    <a href="https://www.linkedin.com/in/stuxnet/" class="btn btn-primary" rel="noreferrer">Seguir en LinkedIn</a>
-    {% if site.data.info.twitter %}
-      &nbsp;
-      <a href="https://x.com/{{ site.data.info.twitter }}" class="btn" rel="noreferrer">Seguir en X</a>
-    {% endif %}
-  </p>
+</section>
+
+<!-- Boletos -->
+<section style="text-align: center; padding: 2rem;">
+  <h2>Boletos</h2>
+  <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Consigue tu acceso al evento</p>
+  <a href="https://bugcon-security-conference-2026.boletia.com/"
+     class="btn btn-primary"
+     target="_blank"
+     rel="noreferrer"
+     style="font-size: 1rem; padding: 0.75rem 2rem;">
+    🎟️ Comprar Boletos
+  </a>
+</section>
+
+<!-- Talleres -->
+<section class="tone-dark" style="padding: 3rem 2rem;">
+  <h2 style="text-align: center; margin-bottom: 0.5rem;">Talleres</h2>
+  <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">Workshops de entrenamiento práctico</p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 860px; margin: 0 auto;">
+
+    <div class="hardware-card" style="padding: 0;">
+      <div class="hardware-content">
+        <h2 style="font-size: 1rem; margin-bottom: 0.75rem;">
+          🛰️ Introducción Práctica a Seguridad a Satélites con FlatSat
+        </h2>
+        <p style="font-size: 0.875rem;">
+          Taller práctico de ciberseguridad aeroespacial usando la plataforma FlatSat. Explora arquitectura satelital, comunicaciones RF y ejercicios de ataque y defensa.
+        </p>
+        <a href="https://www.eventbrite.com/e/taller-introduccion-practica-a-seguridad-a-satelites-con-flatsat-tickets-2003435878644?aff=oddtdtcreator"
+           class="btn"
+           target="_blank"
+           rel="noreferrer">
+          Registro →
+        </a>
+      </div>
+    </div>
+
+    <div class="hardware-card" style="padding: 0;">
+      <div class="hardware-content">
+        <h2 style="font-size: 1rem; margin-bottom: 0.75rem;">
+          ☁️ Advanced AWS Detection &amp; Response
+        </h2>
+        <p style="font-size: 0.875rem;">
+          Entrenamiento avanzado en detección, respuesta a incidentes y forense en cloud. Ejecuta cadenas de ataque reales contra entornos AWS y aprende a detectar e investigar la telemetría resultante.
+        </p>
+        <a href="https://www.eventbrite.com/e/taller-advanced-aws-detection-response-tickets-2003434812455?aff=oddtdtcreator"
+           class="btn"
+           target="_blank"
+           rel="noreferrer">
+          Registro →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Community Sponsors -->
+<section style="padding: 3rem 2rem; text-align: center;">
+  <h2>Community Sponsors</h2>
+  <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Gracias a nuestros patrocinadores por hacer esto posible</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 3rem; max-width: 860px; margin: 0 auto;">
+
+    <a href="https://pwnlab.mx/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
+      <img src="{{ site.baseurl }}/images/logos/pwnlabmx.png"
+           alt="PwnLab.mx"
+           class="sponsor-logo" />
+    </a>
+
+    <a href="https://electroniccats.com/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
+      <img src="{{ site.baseurl }}/images/logos/electroniccats.png"
+           alt="Electronic Cats"
+           class="sponsor-logo" />
+    </a>
+
+    <a href="https://websec.mx/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
+      <img src="{{ site.baseurl }}/images/logos/websec.png"
+           alt="Websec.mx"
+           class="sponsor-logo" />
+    </a>
+
+    <a href="https://academy.salmg.net/" target="_blank" rel="noreferrer" class="sponsor-logo-link" style="flex-direction: column; gap: 0.5rem;">
+      <img src="{{ site.baseurl }}/images/logos/smacademy.svg"
+           alt="SM Academy"
+           class="sponsor-logo" />
+      <span style="color: var(--text); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;">SM Academy</span>
+    </a>
+
+  </div>
 </section>

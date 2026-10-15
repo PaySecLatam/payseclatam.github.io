@@ -1226,3 +1226,35 @@ td {
 .w-100 { width: 100%; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 .d-block { display: block; }
+
+/* ==========================
+   Sponsors
+   ========================== */
+.sponsor-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sponsor-logo-link:hover {
+  border-color: var(--green-dim);
+  box-shadow: 0 0 16px rgba(0,255,65,0.1);
+}
+
+.sponsor-logo {
+  height: 50px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: brightness(0.9) saturate(0.7);
+  transition: filter 0.25s ease;
+}
+
+.sponsor-logo-link:hover .sponsor-logo {
+  filter: brightness(1) saturate(1);
+}

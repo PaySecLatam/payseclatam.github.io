@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!--
+    The simplified plate. The six-pad drawing in the full mark loses its gaps
+    below about 90px, so the brand kit specifies this four-unit-stroke version
+    for favicons and anything 64px or under.
+
+    Explicit colours rather than currentColor: a tab icon is composited against
+    browser chrome, not against the page, so it carries its own steel ground
+    and reads the same on a light or a dark toolbar.
+  -->
+  <rect width="64" height="64" fill="#1d2d3d"/>
+  <g transform="translate(4 4) scale(0.875)">
+    <rect x="6" y="14" width="52" height="36" fill="none" stroke="#94bce3" stroke-width="4"/>
+    <g fill="#94bce3">
+      <rect x="15" y="22" width="15" height="9"/>
+      <rect x="34" y="22" width="15" height="9"/>
+      <rect x="15" y="33" width="15" height="9"/>
+    </g>
+    <rect x="35.5" y="34.5" width="12" height="6" fill="none" stroke="#94bce3" stroke-width="3"/>
+  </g>
+</svg>
