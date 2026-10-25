@@ -1,0 +1,86 @@
+---
+layout: default
+title: Pwned!CON 2026
+permalink: /events/past/pwnedcon2026/
+---
+
+<section style="padding: 3rem 1.5rem 2rem;">
+  <div class="b26-container">
+    <p style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 0.5rem;">SEPTIEMBRE 2026 · GUATEMALA CITY, GUATEMALA</p>
+    <h1 style="margin-bottom: 0.5rem;">Pwned!CON 2026</h1>
+    <p style="color: var(--cyan); font-size: 1rem; letter-spacing: 0.06em;">PaySec Latam // Payment Security Village</p>
+
+    <p style="margin-top: 1.5rem; max-width: 720px; line-height: 1.8; color: var(--text-muted);">
+      En Pwned!CON 2026 presentamos tres demostraciones prácticas sobre tecnologías de pago contactless:
+      ataques de relay NFC, un simulador de cobros en transporte público, y lectura de datos de
+      documentos de identidad con comandos APDU.
+    </p>
+  </div>
+</section>
+
+<section class="tone-dark" style="padding: 3rem 1.5rem;">
+  <div class="b26-container">
+    <h2 style="margin-bottom: 1.5rem;">Demostraciones</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+      <div class="b26-ctf-card">
+        <h4>📡 Ataques de Relay NFC</h4>
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-muted);">
+          Demostración en vivo de ataques de relay sobre NFC. Se mostró cómo es posible retransmitir
+          la señal de una tarjeta contactless a distancia sin que el portador lo note, con el objetivo
+          de entender el riesgo real de este tipo de ataques en sistemas de pago y acceso.
+        </p>
+        <ul class="b26-list" style="margin-top: 0.75rem;">
+          <li><span style="color: var(--green);">→</span> Arquitectura del ataque (proxy + ghost)</li>
+          <li><span style="color: var(--green);">→</span> Hardware utilizado</li>
+          <li><span style="color: var(--green);">→</span> Mitigaciones reales en producción</li>
+        </ul>
+      </div>
+
+      <div class="b26-ctf-card">
+        <h4>🚌 Simulador de Cobros — Estación de Buses</h4>
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-muted);">
+          Simulador que replica el sistema de cobro de una estación de transporte público para comprender
+          cómo se procesa el pago con distintos tipos de tarjetas. Se demostró el flujo completo
+          de cobro con tres tipos de tarjeta:
+        </p>
+        <ul class="b26-list" style="margin-top: 0.75rem;">
+          <li><span style="color: var(--cyan);">📶</span> Tarjeta RFID estándar</li>
+          <li><span style="color: var(--cyan);">🔵</span> Tarjeta DESFire</li>
+          <li><span style="color: var(--cyan);">💳</span> Tarjeta real de transporte</li>
+        </ul>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.75rem; border-top: 1px solid var(--border); padding-top: 0.75rem;">
+          <span style="color: var(--green);">⬡</span> El simulador será liberado como open-source próximamente.
+        </p>
+      </div>
+
+      <div class="b26-ctf-card">
+        <h4>🪪 Lectura de DPI con Comandos APDU</h4>
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-muted);">
+          Demostración de lectura de datos del Documento Personal de Identificación (DPI) de Guatemala
+          usando comandos APDU directamente sobre la misma aplicación utilizada en las demos anteriores.
+          Se exploró la estructura del chip y la información accesible usando la misma autenticación que nos proporcionan las aplicaciones oficiales.
+        </p>
+        <ul class="b26-list" style="margin-top: 0.75rem;">
+          <li><span style="color: var(--green);">→</span> Estructura de archivos del chip</li>
+          <li><span style="color: var(--green);">→</span> Comandos APDU de lectura</li>
+          <li><span style="color: var(--green);">→</span> Datos públicos vs. datos protegidos</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding: 3rem 1.5rem; text-align: center;">
+  <div class="b26-container">
+    <p style="color: var(--text-muted); font-size: 0.9rem;">
+      ¿Quieres saber más?
+      <a href="https://www.linkedin.com/in/stuxnet/" rel="noreferrer" style="color: var(--cyan);">LinkedIn</a>
+      {% if site.data.info.twitter %}
+        · <a href="https://x.com/{{ site.data.info.twitter }}" rel="noreferrer" style="color: var(--cyan);">X / Twitter</a>
+      {% endif %}
+    </p>
+  </div>
+</section>

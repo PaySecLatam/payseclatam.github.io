@@ -4,112 +4,228 @@ title: BugCON 2026
 permalink: /events/bugcon2026/
 ---
 
-<!-- Hero -->
+{% assign ev = site.data.bugcon2026 %}
+
+<!-- ========== HERO ========== -->
 <section style="text-align: center; padding: 4rem 2rem 2rem;">
-  <div class="nfc-rings" style="margin: 0 auto 2rem; display: inline-block; position: relative;">
-    <img src="{{ site.baseurl }}/images/meche.png" alt="PaySec Latam" style="max-width: 150px; display: block; filter: drop-shadow(0 0 16px rgba(0,255,65,0.3));" />
-    <span class="nfc-ring r1"></span>
-    <span class="nfc-ring r2"></span>
-    <span class="nfc-ring r3"></span>
-  </div>
   <h1>BugCON 2026</h1>
-  <h2>PaySec Latam &mdash; Payment Security Village</h2>
-
-  <div class="terminal-box" style="max-width: 480px; margin: 2rem auto; text-align: left;">
-    <p class="terminal-prompt">status: <span style="color: var(--green);">ACTIVE</span></p>
-    <p class="terminal-prompt">location: <span style="color: var(--cyan);">Mexico City, Mexico</span></p>
-    <p class="terminal-prompt">year: <span style="color: var(--cyan);">2026</span><span class="terminal-blink"> _</span></p>
+  <p style="color: var(--cyan); font-size: 1.1rem; letter-spacing: 0.1em; margin: 0.5rem 0 1.5rem;">
+    PaySec Latam // Payment Security Village
+  </p>
+  <div class="b26-terminal-header">
+    <span>NFC_FREQ: 13.56 MHz // ISO/IEC 14443</span>
+    <span>STATUS: SECURE_ELEMENT_ACTIVE<span class="terminal-blink">_</span></span>
   </div>
 </section>
 
-<!-- Boletos -->
-<section style="text-align: center; padding: 2rem;">
-  <h2>Boletos</h2>
-  <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Consigue tu acceso al evento</p>
-  <a href="https://bugcon-security-conference-2026.boletia.com/"
-     class="btn btn-primary"
-     target="_blank"
-     rel="noreferrer"
-     style="font-size: 1rem; padding: 0.75rem 2rem;">
-    🎟️ Comprar Boletos
-  </a>
-</section>
+<!-- ========== AGENDA ========== -->
+<section style="padding: 2rem 1.5rem 3rem;">
+  <div class="b26-container">
+    <h2 style="margin-bottom: 0.25rem;">Agenda</h2>
 
-<!-- Talleres -->
-<section class="tone-dark" style="padding: 3rem 2rem;">
-  <h2 style="text-align: center; margin-bottom: 0.5rem;">Talleres</h2>
-  <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">Workshops de entrenamiento práctico</p>
+    <div class="b26-timeline">
+      {% for session in ev.agenda %}
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 860px; margin: 0 auto;">
+        {% if session.type == 'break' %}
+          <div class="b26-slot b26-break">
+            <span class="b26-badge b26-badge-break">{{ session.time }}</span>
+            <div class="b26-slot-content">
+              <div class="b26-slot-title b26-break-title">{{ session.title }}</div>
+            </div>
+          </div>
 
-    <div class="hardware-card" style="padding: 0;">
-      <div class="hardware-content">
-        <h2 style="font-size: 1rem; margin-bottom: 0.75rem;">
-          🛰️ Introducción Práctica a Seguridad a Satélites con FlatSat
-        </h2>
-        <p style="font-size: 0.875rem;">
-          Taller práctico de ciberseguridad aeroespacial usando la plataforma FlatSat. Explora arquitectura satelital, comunicaciones RF y ejercicios de ataque y defensa.
-        </p>
-        <a href="https://www.eventbrite.com/e/taller-introduccion-practica-a-seguridad-a-satelites-con-flatsat-tickets-2003435878644?aff=oddtdtcreator"
-           class="btn"
-           target="_blank"
-           rel="noreferrer">
-          Registro →
-        </a>
-      </div>
+        {% else %}
+          <div class="b26-slot {% if session.type == 'tba' %}b26-tba{% endif %}"
+               onclick="showSession('{{ session.uid | remove: '0x' }}')"
+               tabindex="0"
+               role="button"
+               aria-label="Ver detalles: {{ session.title }}">
+            <span class="b26-badge {% if session.type == 'tba' %}b26-badge-tba{% endif %}">{{ session.time }}</span>
+            <div class="b26-slot-content">
+              <div class="b26-slot-title">{{ session.title }}</div>
+              <div class="b26-slot-speaker">{{ session.speaker }}</div>
+            </div>
+            <span class="b26-slot-arrow">›</span>
+          </div>
+        {% endif %}
+
+      {% endfor %}
     </div>
-
-    <div class="hardware-card" style="padding: 0;">
-      <div class="hardware-content">
-        <h2 style="font-size: 1rem; margin-bottom: 0.75rem;">
-          ☁️ Advanced AWS Detection &amp; Response
-        </h2>
-        <p style="font-size: 0.875rem;">
-          Entrenamiento avanzado en detección, respuesta a incidentes y forense en cloud. Ejecuta cadenas de ataque reales contra entornos AWS y aprende a detectar e investigar la telemetría resultante.
-        </p>
-        <a href="https://www.eventbrite.com/e/taller-advanced-aws-detection-response-tickets-2003434812455?aff=oddtdtcreator"
-           class="btn"
-           target="_blank"
-           rel="noreferrer">
-          Registro →
-        </a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- Community Sponsors -->
-<section style="padding: 3rem 2rem; text-align: center;">
-  <h2>Community Sponsors</h2>
-  <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Gracias a nuestros patrocinadores por hacer esto posible</p>
+<!-- ========== MODAL SESIÓN ========== -->
+<div id="b26-modal" class="modal" onclick="if(event.target===this)closeSession()">
+  <div class="modal-content b26-modal-content">
+    <span class="close" onclick="closeSession()">&times;</span>
+    <div class="b26-modal-inner">
+      <img id="b26-modal-photo" src="" alt="" class="b26-modal-photo" />
+      <div class="b26-modal-body">
+        <div class="b26-modal-uid" id="b26-modal-uid"></div>
+        <h3 id="b26-modal-title"></h3>
+        <p class="b26-modal-speaker-name" id="b26-modal-speaker"></p>
+        <p style="font-size:0.9rem; line-height:1.7; white-space:pre-line;" id="b26-modal-abstract"></p>
+        <hr style="border-color: var(--border); margin: 1rem 0;">
+        <p style="font-size:0.82rem; color: var(--text-muted); line-height:1.6; white-space:pre-line;" id="b26-modal-bio"></p>
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a id="b26-modal-linkedin" href="#" target="_blank" rel="noreferrer" class="btn" style="font-size:0.8rem; padding:0.35rem 0.8rem;">LinkedIn</a>
+          <a id="b26-modal-permalink" href="#" target="_blank" rel="noreferrer" class="btn btn-primary" style="font-size:0.8rem; padding:0.35rem 0.8rem;">Ver página →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 3rem; max-width: 860px; margin: 0 auto;">
+<script>
+const b26Sessions = {
+  {% for session in ev.agenda %}{% unless session.type == 'break' %}
+  "{{ session.uid | remove: '0x' }}": {
+    uid:      "{{ session.uid }}",
+    title:    {{ session.title    | jsonify }},
+    speaker:  {{ session.speaker  | jsonify }},
+    photo:    "{{ site.baseurl }}/images/bugcon2026_speakers/{{ session.photo }}",
+    bio:      {{ session.bio      | jsonify }},
+    abstract: {{ session.abstract | jsonify }},
+    twitter:  "{{ session.links.twitter }}",
+    linkedin: "{{ session.links.linkedin }}",
+    slug:     "{{ session.slug }}",
+    permalink: "{{ site.baseurl }}/events/bugcon2026/sessions/{{ session.slug }}/"
+  }{% unless forloop.last %},{% endunless %}
+  {% endunless %}{% endfor %}
+};
 
-    <a href="https://pwnlab.mx/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
-      <img src="{{ site.baseurl }}/images/logos/pwnlabmx.png"
-           alt="PwnLab.mx"
-           class="sponsor-logo" />
-    </a>
+function showSession(uid) {
+  const s = b26Sessions[uid];
+  if (!s) return;
+  document.getElementById('b26-modal-uid').textContent      = 'UID: ' + s.uid;
+  document.getElementById('b26-modal-title').textContent    = s.title;
+  document.getElementById('b26-modal-speaker').textContent  = s.speaker;
+  document.getElementById('b26-modal-abstract').textContent = s.abstract;
+  document.getElementById('b26-modal-bio').textContent      = s.bio;
+  document.getElementById('b26-modal-linkedin').href        = s.linkedin;
+  const photo = document.getElementById('b26-modal-photo');
+  photo.src = s.photo;
+  photo.style.display = s.photo.endsWith('/') ? 'none' : 'block';
 
-    <a href="https://electroniccats.com/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
-      <img src="{{ site.baseurl }}/images/logos/electroniccats.png"
-           alt="Electronic Cats"
-           class="sponsor-logo" />
-    </a>
+  document.getElementById('b26-modal-permalink').href = s.permalink;
+  document.getElementById('b26-modal').style.display = 'block';
+}
 
-    <a href="https://websec.mx/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
-      <img src="{{ site.baseurl }}/images/logos/websec.png"
-           alt="Websec.mx"
-           class="sponsor-logo" />
-    </a>
+function closeSession() {
+  document.getElementById('b26-modal').style.display = 'none';
+}
 
-    <a href="https://academy.salmg.net/" target="_blank" rel="noreferrer" class="sponsor-logo-link" style="flex-direction: column; gap: 0.5rem;">
-      <img src="{{ site.baseurl }}/images/logos/smacademy.svg"
-           alt="SM Academy"
-           class="sponsor-logo" />
-      <span style="color: var(--text); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;">SM Academy</span>
-    </a>
 
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSession(); });
+</script>
+
+<!-- ========== CTF ========== -->
+<section class="tone-dark" style="padding: 3rem 1.5rem;">
+  <div class="b26-container">
+    <h2 style="margin-bottom: 0.5rem;">{{ ev.ctf.title }}</h2>
+    <p style="color: var(--text-muted); max-width: 680px; margin-bottom: 2.5rem; font-size:0.95rem; line-height:1.7;">
+      {{ ev.ctf.description }}
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+
+      <!-- Categorías -->
+      <div class="b26-ctf-card">
+        <h4>Categorías</h4>
+        <ul class="b26-list">
+          {% for cat in ev.ctf.categories %}
+            <li>{{ cat.icon }} {{ cat.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Requisitos -->
+      <div class="b26-ctf-card">
+        <h4>Requisitos</h4>
+        <ul class="b26-list">
+          {% for req in ev.ctf.requirements %}
+            <li><span style="color:var(--green);">→</span> {{ req }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Reglas -->
+      <div class="b26-ctf-card b26-rules-card">
+        <h4>⚠️ Reglas</h4>
+        <ul class="b26-list">
+          {% for rule in ev.ctf.rules %}
+            <li><span style="color:var(--red);">✕</span> {{ rule }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Info / Fechas -->
+      <div class="b26-ctf-card">
+        <h4>Info</h4>
+        <div class="b26-list" style="display:flex; flex-direction:column; gap:0.5rem;">
+          <p><span style="color:var(--text-muted);">Inicio:</span> {{ ev.ctf.start }}</p>
+          <p><span style="color:var(--text-muted);">Cierre:</span> {{ ev.ctf.end }}</p>
+          {% if ev.ctf.link != '#' %}
+            <a href="{{ ev.ctf.link }}" class="btn btn-primary" target="_blank" rel="noreferrer" style="text-align:center; margin-top:0.5rem;">
+              Registro CTF →
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Premios -->
+      <div class="b26-ctf-card">
+        <h4>🏆 Premios</h4>
+        <ul class="b26-list">
+          {% for prize in ev.ctf.prize_list %}
+            <li>
+              <span style="color:var(--green);">{{ prize.place }}</span>
+              <span style="color:var(--text-muted); font-size:0.85rem; display:block; padding-left:0.25rem;">{{ prize.reward }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid var(--border);">
+          {% for note in ev.ctf.prize_notes %}
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem; line-height:1.5;">
+              <span style="color:var(--cyan);">→</span> {{ note }}
+            </p>
+          {% endfor %}
+        </div>
+        <a href="{{ ev.ctf.prize_sponsor.url }}" target="_blank" rel="noreferrer"
+           style="display:inline-block; margin-top:0.75rem; font-size:0.78rem; color:var(--text-muted);">
+          Premios patrocinados por <strong style="color:var(--text);">{{ ev.ctf.prize_sponsor.name }}</strong>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMMUNITY SPONSORS ========== -->
+<section style="padding: 3rem 1.5rem; text-align:center;">
+  <div class="b26-container">
+    <h2 style="margin-bottom: 0.5rem;">Community Sponsors</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size:0.9rem;">Gracias a nuestros patrocinadores</p>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:2rem;">
+
+      <a href="https://pwnlab.mx/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
+        <img src="{{ site.baseurl }}/images/logos/pwnlabmx.png" alt="PwnLab.mx" class="sponsor-logo" />
+      </a>
+
+      <a href="https://electroniccats.com/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
+        <img src="{{ site.baseurl }}/images/logos/electroniccats.png" alt="Electronic Cats" class="sponsor-logo" />
+      </a>
+
+      <a href="https://websec.mx/" target="_blank" rel="noreferrer" class="sponsor-logo-link">
+        <img src="{{ site.baseurl }}/images/logos/websec.png" alt="Websec.mx" class="sponsor-logo" />
+      </a>
+
+      <a href="https://academy.salmg.net/" target="_blank" rel="noreferrer" class="sponsor-logo-link" style="flex-direction:column; gap:0.5rem;">
+        <img src="{{ site.baseurl }}/images/logos/smacademy.svg" alt="SM Academy" class="sponsor-logo" />
+        <span style="color:var(--text); font-size:0.8rem; font-weight:600; letter-spacing:0.05em;">SM Academy</span>
+      </a>
+
+    </div>
   </div>
 </section>

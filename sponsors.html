@@ -1,43 +1,59 @@
 ---
 layout: default
-title: Get Involve
+title: Sponsors & Apoyo
 permalink: /sponsors/
 ---
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <section class="index-container">
-	  <h1>Sponsors & Apoyo</h1>
 
-	  <p>
-	    Este proyecto no se limita a un sitio web, buscamos llevar la iniciativa a <strong>conferencias, talleres y eventos de ciberseguridad</strong>.  
-	    Gracias al apoyo de la comunidad y sponsors podemos seguir creciendo y compartiendo conocimiento de forma abierta.
-	  </p>
+<section class="index-container">
+  <h1>Sponsors &amp; Apoyo</h1>
 
-	  <h2>¿Por qué apoyar?</h2>
-	  <ul>
-	    <li>Impulsar la creación de <strong>CTFs</strong> para entrenar habilidades en seguridad ofensiva y defensiva.</li>
-	    <li>Financiar la producción de <strong>contenido técnico</strong> como blogs, guías y laboratorios.</li>
-	    <li>Permitir la participación en <strong>conferencias y charlas</strong> llevando estas ideas a más lugares.</li>
-	    <li>Apoyar la organización de <strong>workshops y capacitaciones</strong> abiertas a la comunidad.</li>
-	    <li>Contribuir a la innovación y difusión de temas de <strong>seguridad en pagos y fintech</strong>.</li>
-	  </ul>
+  <p>
+    Este proyecto no se limita a un sitio web, buscamos llevar la iniciativa a <strong>conferencias, talleres y eventos de ciberseguridad</strong>.
+    Gracias al apoyo de la comunidad y sponsors podemos seguir creciendo y compartiendo conocimiento de forma abierta.
+  </p>
 
-	  <h2>Beneficios para Sponsors</h2>
-	  <p>Ser sponsor te conecta con una comunidad activa de entusiastas y profesionales en ciberseguridad. Algunos beneficios incluyen:</p>
-	  <ul>
-	    <li>Visibilidad en nuestra página web y materiales de difusión.</li>
-	    <li>Presencia en conferencias y eventos donde participemos.</li>
-	    <li>Reconocimiento en retos, publicaciones y recursos educativos.</li>
-	    <li>Oportunidad de colaborar en proyectos innovadores y de alto impacto.</li>
-	  </ul>
+  <h2>¿Por qué apoyar?</h2>
+  <ul>
+    <li>Impulsar la creación de <strong>CTFs</strong> para entrenar habilidades en seguridad ofensiva y defensiva.</li>
+    <li>Financiar la producción de <strong>contenido técnico</strong> como blogs, guías y laboratorios.</li>
+    <li>Permitir la participación en <strong>conferencias y charlas</strong> llevando estas ideas a más lugares.</li>
+    <li>Apoyar la organización de <strong>workshops y capacitaciones</strong> abiertas a la comunidad.</li>
+    <li>Contribuir a la innovación y difusión de temas de <strong>seguridad en pagos y fintech</strong>.</li>
+  </ul>
 
-	  <h2>Cómo ser parte</h2>
-	  <p>
-	    Tu apoyo puede ser en forma de <strong>patrocinio financiero</strong>, recursos técnicos, o colaboraciones estratégicas.  
-	    Cada contribución nos ayuda a expandir el alcance y llevar este proyecto a nuevas audiencias.
-	  </p>
+  <h2>Beneficios para Sponsors</h2>
+  <p>Ser sponsor te conecta con una comunidad activa de entusiastas y profesionales en ciberseguridad. Algunos beneficios incluyen:</p>
+  <ul>
+    <li>Visibilidad en nuestra página web y materiales de difusión.</li>
+    <li>Presencia en conferencias y eventos donde participemos.</li>
+    <li>Reconocimiento en retos, publicaciones y recursos educativos.</li>
+    <li>Oportunidad de colaborar en proyectos innovadores y de alto impacto.</li>
+  </ul>
 
-	  <p>
-	    Si deseas más información sobre planes de patrocinio o colaborar de otra forma, contáctanos en: <a href="mailto:paymentlatam@proton.me"><i class="fa-solid fa-envelope"></i> 
-	  </p>
-</div>
+  <h2>Cómo ser parte</h2>
+  <p>
+    Tu apoyo puede ser en forma de <strong>patrocinio financiero</strong>, recursos técnicos, o colaboraciones estratégicas.
+    Contáctanos en: <a href="mailto:payseclatam@proton.me">payseclatam@proton.me</a>
+  </p>
 </section>
+
+{% for tier in site.data.sponsors.tiers %}
+<section class="tone-dark" style="padding: 2.5rem 1.5rem;">
+  {% if tier[1].show_title %}
+    <h2>{{ tier[0] }}</h2>
+  {% endif %}
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:2rem; margin-top:1.5rem;">
+    {% for sponsor in tier[1].sponsors %}
+      {% assign sponsor_key = sponsor[0] %}
+      {% assign sponsor_data = sponsor[1] %}
+      <a href="{{ sponsor_data.url }}" target="_blank" rel="noreferrer" class="sponsor-logo-link" style="flex-direction:column; gap:0.4rem;">
+        <img src="{{ site.baseurl }}/images/logos/{{ sponsor_key }}.jpg"
+             onerror="this.src.indexOf('.jpg')>-1?(this.src=this.src.replace('.jpg','.png')):(this.src=this.src.replace('.png','.svg'),this.onerror=null)"
+             alt="{{ sponsor_data.name }}"
+             class="sponsor-logo" />
+        <span style="color:var(--text-muted); font-size:0.75rem; letter-spacing:0.04em;">{{ sponsor_data.name }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}

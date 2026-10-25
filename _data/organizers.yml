@@ -4,10 +4,13 @@ people:
     link: https://buymeacoffee.com/stux
   
   - first: klez
+    role: Infrastructure Lead
     link: http://example.org
 
   - first: T1N0
+    role: CTF Tester
     link: https://github.com/engelberth90
 
   - first: L
+    role: CTF Tester
     link: https://github.com/SmolSpooder6

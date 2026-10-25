@@ -4,34 +4,43 @@ title: Blog
 permalink: /blog/
 ---
 
-<h1>Blog</h1>
+<section style="padding: 3rem 1.5rem 1rem;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h1 style="margin-bottom: 0.25rem;">Blog</h1>
+    <p style="color: var(--text-muted); font-size: 0.9rem;">Investigación, recursos y novedades de PaySec Latam.</p>
+  </div>
+</section>
 
-<div class="blog-grid">
-  {% assign posts_sorted = site.posts | sort: "date" | reverse %}
-  {% for post in posts_sorted %}
-    <div class="blog-card">
-      {% if post.image %}
-        <img src="{{ post.image }}" alt="{{ post.title }}">
-      {% endif %}
-      <div class="blog-content">
-        <h2>{{ post.title }}</h2>
-        <p class="post-meta">
-          {% if post.author %}Por {{ post.author }}{% endif %} | {{ post.date | date: "%d %B %Y" }}
-        </p>
-        {% if post.excerpt %}
-          <p>{{ post.excerpt }}</p>
-        {% else %}
-          <p>{{ post.content | strip_html | truncatewords: 20 }}</p>
-        {% endif %}
-        {% if post.tags %}
-          <p class="post-tags">
-            {% for tag in post.tags %}
-              <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </p>
-        {% endif %}
-        <a href="{{ post.url }}" class="read-more">Leer más →</a>
+<section style="padding: 1.5rem 1.5rem 4rem;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+
+    {% assign posts_sorted = site.posts | sort: "date" | reverse %}
+
+    {% if posts_sorted.size == 0 %}
+      <p style="color: var(--text-muted);">Próximamente...</p>
+    {% else %}
+      <div class="blog-grid">
+        {% for post in posts_sorted %}
+          <div class="blog-card">
+            <div class="blog-content">
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; align-items: center;">
+                <span style="font-family: 'Courier New', monospace; font-size: 0.72rem; color: var(--text-muted);">{{ post.date | date: "%d %b %Y" }}</span>
+                {% if post.tags %}
+                  {% for tag in post.tags %}
+                    <span class="tag">{{ tag }}</span>
+                  {% endfor %}
+                {% endif %}
+              </div>
+              <h2>{{ post.title }}</h2>
+              <p>
+                {% if post.excerpt %}{{ post.excerpt | strip_html | truncatewords: 25 }}{% else %}{{ post.content | strip_html | truncatewords: 25 }}{% endif %}
+              </p>
+              <a href="{{ post.url }}" class="read-more">Leer más →</a>
+            </div>
+          </div>
+        {% endfor %}
       </div>
-    </div>
-  {% endfor %}
-</div>
+    {% endif %}
+
+  </div>
+</section>

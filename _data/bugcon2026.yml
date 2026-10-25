@@ -1,0 +1,151 @@
+event:
+  name: BugCON 2026
+  date: "2026"
+  location: Mexico City, Mexico
+  edition: "18 años de BugCON"
+
+agenda:
+  - uid: "0x01"
+    type: talk
+    slug: "bienvenida"
+    time: "10:00 - 10:05"
+    tag: INTRO
+    title: "Bienvenida e Introducción a la villa"
+    speaker: "Cesar Calderon"
+    photo: "cesar.jpg"
+    bio: "Consultor de seguridad con amplia experiencia en sistemas de pago, NFC y red teaming."
+    abstract: "Bienvenida oficial al Payment Security Village de PaySec Latam en BugCON 2026. Introducción al equipo, las actividades de la villa y lo que viene durante el día."
+    links:
+      twitter: "https://x.com/__stux"
+      linkedin: "https://www.linkedin.com/in/stuxnet/"
+
+  - uid: "0x02"
+    type: talk
+    slug: "magstripe-reload"
+    time: "10:05 - 10:40"
+    tag: MAGSTRIPE
+    title: "Introducción a magstripe reload"
+    speaker: "Adrián González"
+    photo: "adrian.jpg"
+    bio: "Ingeniero en Sistemas Computacionales y desarrollador de software, con experiencia en desarrollo backend, arquitectura de sistemas, infraestructura tecnológica y automatización de procesos. Apasionado por la ciberseguridad, la investigación en radiofrecuencia (RF), el desarrollo de hardware y las tecnologías emergentes. Me caracterizo por el aprendizaje continuo, la resolución de problemas complejos y la integración de conocimientos de distintas áreas para crear soluciones tecnológicas innovadoras, eficientes y seguras."
+    abstract: "En esta sesesión se cubrira la exploración de la estructura y el procesamiento de datos de bandas magnéticas (Magstripe) mediante el desarrollo de un cliente web basado en Web Serial API. Se abordará la lectura, el parseo y el análisis de la información obtenida, identificando los datos presentes en las pistas magnéticas y evaluando, desde una perspectiva de seguridad, los riesgos asociados a su tratamiento en plataformas de pago. Mediante pruebas de concepto en entornos controlados, se analizarán posibles escenarios de exposición de información, validación insuficiente y abuso de flujos de compra, destacando la importancia de los controles implementados para prevenir el uso indebido de datos de pago."
+    links:
+      linkedin: "https://www.linkedin.com/in/adrian-g-7242a3124/"
+
+  - uid: "0x03"
+    type: talk
+    slug: "dma-for-dummies"
+    time: "10:40 - 11:25"
+    tag: HARDWARE
+    title: "DMA for dummy's"
+    speaker: "Arnold Jared Morales Yepez"
+    photo: "arnol.jpg"
+    bio: "Desde los 12 años me he dedicado a la informática, con un enfoque especial en la seguridad. Ahora, a los 22, sigo explorando este mundo con la misma pasión, impulsado por la constante evolución de la tecnología y su infinita curva de aprendizaje. Tengo una licenciatura en Informática Forense y Ciberseguridad, y actualmente estoy realizando un máster en Inteligencia Artificial y Ciberseguridad."
+    abstract: "Esta charla explora cómo el acceso directo a memoria (Direct Memory Access, DMA) se convirtió en una superficie crítica de ataque en cajeros automáticos. Se analizará por qué ocurrió este vector, cómo interactúa con el bus PCI/PCIe y dispositivos externos, y cómo puede utilizarse para evadir mecanismos tradicionales de protección como EDRs y controles de integridad del sistema. Desde una perspectiva técnica, se explicará cómo la ausencia o mala implementación de IOMMU, VT-d y configuraciones de firmware permiten el acceso arbitrario a memoria, y cómo esto impacta la confidencialidad, integridad y disponibilidad del sistema ATM. La sesión conecta hardware hacking con evasión avanzada, mostrando cómo el plano físico puede invalidar completamente los modelos de seguridad basados en software."
+    links:
+      linkedin: "https://www.linkedin.com/in/arnoldm19/"
+
+  - uid: "0x04"
+    type: talk
+    slug: "janelarat"
+    time: "11:25 - 12:25"
+    tag: MALWARE
+    title: "JanelaRAT, una familia de malware bancario evolucionando rápidamente con estilo latino"
+    speaker: "Isabel Manjarrez"
+    photo: "isabel.png"
+    bio: "Senior security researcher en el Equipo Global de Investigación y Análisis (GReAT) de Kaspersky. Se especializa en la investigación de actores amenaza en Latinoamérica. Ingeniera en telecomunicaciones y sistemas electrónicos, sus intereses incluyen la inteligencia de amenazas, análisis de malware, comunicaciones satelitales, electrónica y música. Ha compartido su conocimiento como ponente en conferencias locales e internacionales como Defcon, Virus Bulletin, Security Analyst Summit (SAS) y EkoParty."
+    abstract: "JanelaRAT surgió a finales de 2023 con el objetivo de atacar a usuarios de diversas instituciones financieras y plataformas de comercio de criptomonedas en América Latina. Este malware se ha unido al grupo de amenazas brasileñas que buscan información confidencial mediante el monitoreo del comportamiento del usuario. A pesar del poco tiempo transcurrido desde su aparición, ya existen numerosas variantes que presentan nuevas capacidades y se propagan a través de señuelos dirigidos a países específicos. Esta charla examinará las características y funcionalidades de JanelaRAT, destacando la evolución de la familia y los cambios en la implementación de esta operación en expansión. Hemos detectado versiones no documentadas que adaptan el ataque a países hispanohablantes concretos. Su rápida evolución ha dado lugar a múltiples versiones del malware; por ello, debemos estar preparados para futuras iteraciones que incorporen nuevas capacidades, incluso aquellas personalizadas para países específicos."
+    links:
+      linkedin: "https://www.linkedin.com/in/isabel-manjarrez-5007b0136/"
+
+  - uid: "0x05"
+    type: break
+    time: "12:30 - 14:30"
+    tag: BREAK
+    title: "Almuerzo / Lunch Break"
+    speaker: "System Standby"
+    photo: ""
+    bio: ""
+    abstract: ""
+    links:
+      twitter: "#"
+      linkedin: "#"
+
+  - uid: "0x06"
+    type: talk
+    slug: "windows-internals-atm"
+    time: "14:30 - 15:15"
+    tag: ATM_KERNEL
+    title: "Windows Internals en ATMs: Kernel, Protecciones y Lógicas de Negocio"
+    speaker: "Arnold Jared Morales Yepez"
+    photo: "arnol.jpg"
+    bio: "Desde los 12 años me he dedicado a la informática, con un enfoque especial en la seguridad. Ahora, a los 22, sigo explorando este mundo con la misma pasión, impulsado por la constante evolución de la tecnología y su infinita curva de aprendizaje. Tengo una licenciatura en Informática Forense y Ciberseguridad, y actualmente estoy realizando un máster en Inteligencia Artificial y Ciberseguridad."
+    abstract: "Esta sesión aborda las protecciones internas del sistema operativo Windows en entornos ATM, enfocándose en el funcionamiento del kernel, el modelo de drivers, los mecanismos de aislamiento y las políticas de ejecución. Se examinarán componentes como el manejo de privilegios, protección de memoria, controladores XFS, servicios críticos y cómo la lógica de negocio del ATM interactúa con el sistema operativo. El objetivo es comprender qué protege realmente Windows en estos entornos, qué supuestos de seguridad existen y cómo ciertas debilidades en la implementación o configuración pueden permitir la manipulación de procesos críticos, bypass de restricciones o alteración del flujo operativo del cajero."
+    links:
+      linkedin: "https://www.linkedin.com/in/arnoldm19/"
+
+  - uid: "0x07"
+    type: talk
+    slug: "atrium-plexus"
+    time: "15:20 - 17:20"
+    tag: WORKSHOP
+    title: "ATRium + Plexus: de cero a tu primera mutación EMV"
+    speaker: "Salvador Mendoza"
+    photo: "salvador.jpg"
+    bio: |
+      Salvador Mendoza es investigador de seguridad especializado en sistemas de pago, seguridad de hardware, dispositivos embebidos, tokenización e investigación de seguridad ofensiva.
+
+      Su investigación se centra en identificar vulnerabilidades en tecnologías de pago y sistemas embebidos, incluyendo NFC, RFID, MST, EMV con y sin contacto, y otras tecnologías relacionadas con pagos. Ha diseñado y desarrollado herramientas para pruebas de seguridad, ingeniería inversa y pentesting de sistemas de pago y procesos de tokenización.
+
+      Salvador ha presentado su investigación en conferencias internacionales de seguridad como Black Hat USA, DEF CON, HITB, TROOPERS y otras, compartiendo hallazgos sobre seguridad en pagos, vulnerabilidades de tokenización y nuevas técnicas de ataque.
+
+      Es autor del libro "Show me the (e-) money: Hacking a sistemas de pagos digitales: NFC, RFID, MST y Chips EMV", una publicación en español con una colección de investigaciones y ataques contra sistemas de pago digital.
+
+      Su trabajo e intereses de investigación actuales incluyen seguridad de hardware, seguridad embebida, seguridad en pagos, EMV, ingeniería inversa, prevención del fraude e investigación de seguridad ofensiva.
+    abstract: |
+      ¿Qué sucede realmente cuando pagas con una tarjeta?
+
+      En este workshop práctico de 2 horas exploraremos cómo funciona una transacción, desde la comunicación entre la tarjeta y la terminal mediante APDUs, hasta los mensajes ISO 8583 que llegan al banco emisor. Veremos qué información se intercambia, cómo se protege y dónde pueden existir riesgos de seguridad.
+
+      Después pasaremos a la práctica con Atrium, una herramienta que permite interceptar, analizar y modificar comandos APDU en tiempo real. Finalmente, conoceremos Plexus, un entorno visual donde podrás construir y probar escenarios de seguridad, como ataques de relay, conectando nodos y observando su funcionamiento en vivo.
+
+      Dos horas para entender qué ocurre detrás de un pago con tarjeta y cómo investigar su seguridad con herramientas reales.
+    links:
+      linkedin: "https://www.linkedin.com/in/salmg/"
+
+ctf:
+  title: "CTF — Payment Security Challenge"
+  description: "El CTF de PaySec Latam está diseñado para poner a prueba tus conocimientos en seguridad de sistemas de pago a través de retos inspirados en escenarios reales."
+  categories:
+    - name: "Aplicaciones móviles mPOS"
+      icon: "📱"
+    - name: "Api y lógica de negocio"
+      icon: "🌐"
+    - name: "Bluetooth"
+      icon: "🔵"
+  requirements:
+    - "Celular con NFC habilitado"
+    - "Burpsuite (Community o Pro)"
+    - "Muchas ganas de reventar el mundo"
+  rules:
+    - "Prohibido atacar la plataforma del CTF"
+    - "Prohibido atacar a otros participantes"
+    - "Prohibido realizar DoS o flood"
+    - "Prohibido hacer jamming al hardware del evento"
+    - "Prohibido el uso de IA para resolver retos"
+  start: "26 de noviembre 10:00am"
+  end: "27 de noviembre 10:00am"
+  link: "https://github.com/PaySecLatam/bugcon2026-ctfpaysec"
+  prize_sponsor:
+    name: "SM Academy"
+    url: "https://academy.salmg.net/"
+  prize_list:
+    - place: "🥇 1er lugar"
+      reward: "Código de descuento del 100% + Libro"
+    - place: "🥈 2do lugar"
+      reward: "Código de descuento del 70%"
+    - place: "🥉 3er lugar"
+      reward: "Código de descuento del 50%"
+  prize_notes:
+    - "Los ejercicios resueltos durante el workshop de Salvador Mendoza también serán tomados en cuenta"
+    - "Bonus: demostrar un ataque de relay NFC será considerado de alto valor dentro del CTF"

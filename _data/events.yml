@@ -6,10 +6,16 @@ upcoming:
     status: upcoming
 
 past:
+  - name: Pwned!CON 2026
+    url: /events/past/pwnedcon2026/
+    date: "September 2026"
+    location: Guatemala City, Guatemala
+    status: past
+
   - name: Tropicon 2026
     url: /events/past/tropicon2026/
-    date: "2026"
-    location: Guatemala
+    date: "April 2026"
+    location: Cozumel, Mexico
     status: past
 
   - name: BugCON 2025
@@ -26,6 +32,6 @@ past:
 
   - name: Ekoparty 2025
     url: /events/past/ekoparty2025/
-    date: "2025"
+    date: "November 2025"
     location: Buenos Aires, Argentina
     status: past

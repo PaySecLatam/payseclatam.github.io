@@ -66,7 +66,30 @@ layout: default
   </p>
 </section>
 
-<section class="tone-dark">
+<!-- Sponsors -->
+{% for tier in site.data.sponsors.tiers %}
+<section class="tone-dark" style="padding: 2.5rem 1.5rem;">
+  {% if tier[1].show_title %}
+    <h2>{{ tier[0] }}</h2>
+  {% endif %}
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:2rem; margin-top:1.5rem;">
+    {% for sponsor in tier[1].sponsors %}
+      {% assign sponsor_key = sponsor[0] %}
+      {% assign sponsor_data = sponsor[1] %}
+      <a href="{{ sponsor_data.url }}" target="_blank" rel="noreferrer" class="sponsor-logo-link" style="flex-direction:column; gap:0.4rem;">
+        <img src="{{ site.baseurl }}/images/logos/{{ sponsor_key }}.jpg"
+             onerror="this.src.indexOf('.jpg')>-1?(this.src=this.src.replace('.jpg','.png')):(this.src=this.src.replace('.png','.svg'),this.onerror=null)"
+             alt="{{ sponsor_data.name }}"
+             class="sponsor-logo" />
+        <span style="color:var(--text-muted); font-size:0.75rem; letter-spacing:0.04em;">{{ sponsor_data.name }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<!-- Staff -->
+<section style="padding: 2.5rem 0;">
   <h1>Staff</h1>
   <div class="items-container">
     {% for person in site.data.organizers.people %}

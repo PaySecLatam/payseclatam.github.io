@@ -1,15 +1,27 @@
-# Whether to display text about the prospectus.
-# See the ReadMe file for information about it.
 show_prospectus: true
 
-# Sponsors, organized by tiers.
-# Tiers have a size, and may have a background color (for e.g. gold/silver/bronze)
-# Each sponsor has a link to its website.
-# See the ReadMe file for information about logos.
 tiers:
+  Bronze Sponsors:
+    show_title: true
+    size: 18
+    sponsors:
+      evivas06:
+        url: https://github.com/evivas06
+        name: evivas06
+
   Community Sponsors:
     show_title: true
-    size: 30
+    size: 18
     sponsors:
-      pwnlabmx: https://pwnlab.mx/
-      electroniccats: https://electroniccats.com/
+      pwnlabmx:
+        url: https://pwnlab.mx/
+        name: PwnLab.mx
+      electroniccats:
+        url: https://electroniccats.com/
+        name: Electronic Cats
+      websec:
+        url: https://websec.mx/
+        name: Websec.mx
+      smacademy:
+        url: https://academy.salmg.net/
+        name: SM Academy

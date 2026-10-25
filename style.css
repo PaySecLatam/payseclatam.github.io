@@ -1193,8 +1193,100 @@ td {
 .post-meta-header a { color: var(--cyan); }
 
 .post-body {
-  line-height: 1.8;
+  line-height: 1.85;
 }
+
+.post-body p {
+  margin: 0 0 1.25rem;
+  color: var(--text);
+}
+
+.post-body h2 {
+  font-size: 1.25rem;
+  color: var(--cyan);
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-body h3 {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 1.75rem 0 0.5rem;
+}
+
+.post-body h4 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 1.25rem 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.post-body a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-body a:hover { color: var(--green); }
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.post-body li {
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--green);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--surface);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.post-body code {
+  font-family: "Courier New", monospace;
+  font-size: 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: var(--green);
+}
+
+.post-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 0 0 1.5rem;
+}
+
+.post-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--green);
+}
+
+.post-list-item:hover h2 { color: var(--green); }
+.post-list-item:first-child { padding-top: 0; }
 
 /* ==========================
    Utilities
@@ -1257,4 +1349,211 @@ td {
 
 .sponsor-logo-link:hover .sponsor-logo {
   filter: brightness(1) saturate(1);
+}
+
+/* ==========================
+   BugCON 2026
+   ========================== */
+.b26-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.b26-terminal-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  padding: 0.5rem 1.1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.06em;
+}
+
+/* --- Agenda / Timeline --- */
+.b26-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.b26-slot {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+.b26-slot[role="button"]:hover {
+  border-color: var(--green-dim);
+  box-shadow: 0 2px 16px rgba(0,255,65,0.08);
+}
+
+.b26-slot[role="button"]:hover .b26-slot-arrow {
+  color: var(--green);
+  transform: translateX(2px);
+}
+
+.b26-break {
+  background: rgba(255,183,0,0.05);
+  border-color: rgba(255,183,0,0.25);
+}
+
+.b26-tba {
+  border-color: rgba(255,71,87,0.3);
+}
+
+/* Hora — columna izquierda */
+.b26-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  color: var(--green);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.9rem 0.9rem;
+  min-width: 112px;
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.b26-badge-break { color: #ffb700; }
+.b26-badge-tba   { color: var(--red); }
+
+/* Contenido central */
+.b26-slot-content {
+  flex: 1;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.b26-slot-title {
+  font-size: 0.95rem;
+  color: var(--text-bright);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.b26-break-title {
+  color: #ffb700;
+  font-weight: 500;
+}
+
+.b26-slot-speaker {
+  font-size: 0.82rem;
+  color: var(--cyan);
+}
+
+/* Flecha derecha */
+.b26-slot-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* --- Modal sesión --- */
+.b26-modal-content {
+  max-width: 580px;
+}
+
+.b26-modal-inner {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.b26-modal-photo {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--green-dim);
+  flex-shrink: 0;
+}
+
+.b26-modal-body { flex: 1; }
+
+.b26-modal-uid {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: "Courier New", monospace;
+  margin-bottom: 0.35rem;
+}
+
+.b26-modal-body h3 {
+  color: var(--green);
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+
+.b26-modal-speaker-name {
+  color: var(--cyan);
+  font-size: 0.875rem;
+  margin-bottom: 0.8rem;
+}
+
+/* --- CTF --- */
+.b26-ctf-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--green-dim);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.b26-rules-card {
+  border-top-color: var(--red);
+}
+
+.b26-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.b26-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.b26-list li:last-child { border-bottom: none; }
+
+.session-body p { margin: 0 0 1rem; }
+.session-body p:last-child { margin-bottom: 0; }
+.session-bio p { margin: 0 0 0.75rem; }
+.session-bio p:last-child { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .b26-badge       { min-width: 90px; font-size: 0.7rem; padding: 0.75rem 0.6rem; }
+  .b26-slot-title  { font-size: 0.875rem; }
+  .b26-modal-inner { flex-direction: column; align-items: center; text-align: center; }
+  .b26-modal-photo { width: 70px; height: 70px; }
+  .b26-terminal-header { font-size: 0.68rem; }
 }

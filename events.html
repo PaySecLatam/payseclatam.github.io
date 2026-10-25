@@ -1,0 +1,47 @@
+---
+layout: default
+title: Eventos
+permalink: /events/
+---
+
+<section style="padding: 3rem 1.5rem;">
+  <div class="index-container">
+    <h2>Próximos Eventos</h2>
+
+    {% if site.data.events.upcoming.size > 0 %}
+      <div style="margin-top: 1.5rem;">
+        {% for event in site.data.events.upcoming %}
+          <a class="event-item" href="{{ site.baseurl }}{{ event.url }}">
+            <div class="event-date">{{ event.date }}</div>
+            <div class="event-details">
+              <h3>{{ event.name }}</h3>
+              <p>{{ event.location }}</p>
+            </div>
+            <span style="color: var(--green); font-size: 1.2rem; margin-left: auto; padding-right: 0.5rem;">›</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p style="color: var(--text-muted);">Próximamente...</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="tone-dark" style="padding: 3rem 1.5rem;">
+  <div class="index-container">
+    <h2>Eventos Pasados</h2>
+
+    <div style="margin-top: 1.5rem;">
+      {% for event in site.data.events.past %}
+        <a class="event-item" href="{{ site.baseurl }}{{ event.url }}">
+          <div class="event-date">{{ event.date }}</div>
+          <div class="event-details">
+            <h3>{{ event.name }}</h3>
+            <p>{{ event.location }}</p>
+          </div>
+          <span style="color: var(--text-muted); font-size: 1.2rem; margin-left: auto; padding-right: 0.5rem;">›</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

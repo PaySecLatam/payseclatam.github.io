@@ -4,68 +4,64 @@ title: Ekoparty 2025
 permalink: /events/past/ekoparty2025/
 ---
 
-<section class="tone-hacker" style="text-align: left; padding: 1.5rem; font-family: 'Courier New', monospace; border-radius: 12px; margin: 2rem auto; max-width: 900px;">
-  <div>
-    <h2 style="color:#22d3ee; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem; margin-bottom: 1rem;">
-      🔐 PaySec Latam at Ekoparty 2025
-    </h2>
-    {{ site.data.info.description_long | markdownify }}
+<section style="padding: 3rem 1.5rem 2rem;">
+  <div class="b26-container">
+    <p style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 0.5rem;">NOVIEMBRE 2025 · BUENOS AIRES, ARGENTINA</p>
+    <h1 style="margin-bottom: 0.5rem;">Ekoparty 2025</h1>
+    <p style="color: var(--cyan); font-size: 1rem; letter-spacing: 0.06em;">PaySec Latam // Payment Security Village</p>
 
-    {% if site.data.workshops %}
-      <p>
-        También organizamos <a href="{{ site.baseurl }}/workshops/">{{ site.data.workshops.name }}</a>.
-      </p>
-    {% endif %}
+    <p style="margin-top: 1.5rem; max-width: 720px; line-height: 1.8; color: var(--text-muted);">
+      En el espacio de Cyberfinance de Ekoparty 2025 presentamos <strong style="color: var(--text);">PAYGoat</strong>, una plataforma open-source
+      diseñada para demostrar de forma práctica las vulnerabilidades más comunes en la lógica de negocio
+      de aplicaciones financieras.
+    </p>
   </div>
 </section>
 
-{% if site.data.schedule %}
-  <section id="schedule" style="text-align: left;">
-    <h1>Schedule</h1>
-    <div class="items-container">
-      {% for part in site.data.schedule %}
-        <div class="item-large">
-          <table>
-            {% if part[0] != '' %}
-              <tr>
-                <th colspan="2">
-                  <h2>{{ part[0] }}</h2>
-                </th>
-              </tr>
-            {% endif %}
-            {% for item in part[1] %}
-              <tr>
-                <td>{{ item[0] }}</td>
-                <td>{{ item[1] }}</td>
-              </tr>
-            {% endfor %}
-          </table>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-{% endif %}
+<section class="tone-dark" style="padding: 3rem 1.5rem;">
+  <div class="b26-container">
 
-{% if site.data.faq %}
-  <section>
-    <h1 id="faq">F.A.Q.</h1>
-    <div class="items-container">
-      {% for item in site.data.faq %}
-        <div class="item-large">
-          <h2 {% if item.id %} id="{{ item.id }}" {% endif %}>{{ item.q }}</h2>
-          <p>{{ item.a | markdownify }}</p>
-        </div>
-      {% endfor %}
-      <div class="item-large">
-        <h2>¿Tienes otra pregunta?</h2>
-        <p>
-          Contáctanos en <a href="https://www.linkedin.com/in/stuxnet/" rel="noreferrer">LinkedIn</a>
-          {% if site.data.info.twitter %}
-            o en <a href="https://x.com/{{ site.data.info.twitter }}" rel="noreferrer">X / Twitter</a>
-          {% endif %}
-          ({{ site.data.info.email }}).
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+      <div class="b26-ctf-card">
+        <h4>🐐 PAYGoat: Playing with Broken Money Flows</h4>
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Una herramienta pensada para enseñar cómo pequeños descuidos en la validación de flujos de pago
+          pueden convertirse en vulnerabilidades críticas. Ideal para talleres, CTFs y aprendizaje autodidacta.
         </p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <a href="https://www.youtube.com/watch?v=w8ZpUnghOj8" target="_blank" rel="noreferrer" class="btn btn-primary" style="text-align: center;">
+            ▶ Ver charla en YouTube
+          </a>
+          <a href="https://github.com/stuxctf/PAYGoat" target="_blank" rel="noreferrer" class="btn" style="text-align: center;">
+            ⌥ GitHub — stuxctf/PAYGoat
+          </a>
+        </div>
       </div>
+
+      <div class="b26-ctf-card">
+        <h4>Sobre la charla</h4>
+        <ul class="b26-list">
+          <li><span style="color: var(--green);">→</span> Flujos de pago con lógica de negocio rota</li>
+          <li><span style="color: var(--green);">→</span> Escenarios inspirados en casos reales</li>
+          <li><span style="color: var(--green);">→</span> Demo en vivo de explotación de vulnerabilidades</li>
+          <li><span style="color: var(--green);">→</span> Plataforma open-source lista para usar en labs</li>
+        </ul>
+      </div>
+
     </div>
-  </section>
-{% endif %}
+
+  </div>
+</section>
+
+<section style="padding: 3rem 1.5rem; text-align: center;">
+  <div class="b26-container">
+    <p style="color: var(--text-muted); font-size: 0.9rem;">
+      ¿Quieres saber más?
+      <a href="https://www.linkedin.com/in/stuxnet/" rel="noreferrer" style="color: var(--cyan);">LinkedIn</a>
+      {% if site.data.info.twitter %}
+        · <a href="https://x.com/{{ site.data.info.twitter }}" rel="noreferrer" style="color: var(--cyan);">X / Twitter</a>
+      {% endif %}
+    </p>
+  </div>
+</section>
