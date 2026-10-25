@@ -1,7 +1,7 @@
 show_prospectus: true
 
 tiers:
-  Bronze Sponsors:
+  Gold Sponsors:
     show_title: true
     size: 18
     sponsors:
