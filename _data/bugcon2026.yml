@@ -110,6 +110,40 @@ agenda:
       Después pasaremos a la práctica con Atrium, una herramienta que permite interceptar, analizar y modificar comandos APDU en tiempo real. Finalmente, conoceremos Plexus, un entorno visual donde podrás construir y probar escenarios de seguridad, como ataques de relay, conectando nodos y observando su funcionamiento en vivo.
 
       Dos horas para entender qué ocurre detrás de un pago con tarjeta y cómo investigar su seguridad con herramientas reales.
+    requirements: |
+      ## Equipo necesario
+
+      Para participar necesitarás una laptop con las siguientes características:
+
+      - **Sistema operativo:** Windows 10/11, Linux o Mac con procesador Intel.
+      - **Memoria RAM:** mínimo 8 GB (recomendados 16 GB).
+      - **Espacio disponible:** al menos 50 GB.
+      - **Software:** VMware Workstation Pro 25H2 o superior (Windows/Linux), o VMware Fusion 25H2 o superior (Mac Intel). Ambos son gratuitos.
+      - **Virtualización:** debe estar habilitada en tu equipo.
+
+      > ⚠️ **Importante:** Las Mac con procesadores Apple Silicon (serie M) no son compatibles con esta máquina virtual. Si utilizas una, avísanos antes del workshop.
+
+      ## Preparación antes del workshop
+
+      Es indispensable descargar, instalar y probar la máquina virtual en casa, antes de asistir al evento. La descarga pesa aproximadamente 9.3 GB, por lo que recomendamos no depender del Wi-Fi de la conferencia.
+
+      1. **Descarga la VM** desde [academy.salmg.net/download/course-vm](https://academy.salmg.net/download/course-vm). No necesitas crear una cuenta.
+      2. **Verifica la integridad del archivo** comparando su SHA256 con el publicado en `course-vm-sha256`. Puedes usar `Get-FileHash` en Windows, `shasum -a 256` en macOS o `sha256sum` en Linux.
+      3. **Instala la VM:** descomprime el archivo y abre `Ubuntu 64-bit 26.04.vmx` en VMware. Si aparece la pregunta sobre mover o copiar la VM, selecciona **I Copied It**. Si solicita una ISO de Ubuntu que no encuentra, puedes continuar sin ella.
+      4. **Inicia sesión** con usuario `payment` y contraseña `payment`.
+      5. **Crea un snapshot** de la VM antes de realizar cualquier cambio.
+
+      ## Conocimientos previos
+
+      - Conocimientos básicos de Linux (navegación por directorios y uso de comandos).
+      - No necesitas experiencia previa en sistemas de pagos. Estar familiarizado con datos hexadecimales puede ayudar, pero no es obligatorio.
+
+      ## Hardware opcional
+
+      - Si cuentas con un lector NFC ACR122U o un lector de tarjetas de contacto PC/SC, puedes traerlo junto con una tarjeta propia para experimentar. Recuerda conectarlo a la VM desde las opciones de dispositivos USB de VMware.
+      - **No necesitas comprar ni traer hardware adicional.** Todas las prácticas principales pueden realizarse con la máquina virtual, sin lectores, tarjetas, teléfonos, cuentas de IA ni llaves de API.
+
+      Nuestro objetivo es dedicar el tiempo del workshop a experimentar y aprender.
     links:
       linkedin: "https://www.linkedin.com/in/salmg/"
 

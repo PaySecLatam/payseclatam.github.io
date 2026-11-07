@@ -1550,6 +1550,53 @@ td {
 .session-bio p { margin: 0 0 0.75rem; }
 .session-bio p:last-child { margin-bottom: 0; }
 
+.session-body h2 {
+  font-size: 1.05rem;
+  color: var(--cyan);
+  margin: 1.75rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+.session-body h2:first-child { margin-top: 0; }
+.session-body h3 {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 1.25rem 0 0.5rem;
+}
+.session-body ul,
+.session-body ol {
+  padding-left: 1.4rem;
+  margin: 0 0 1.1rem;
+}
+.session-body li {
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+.session-body a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.session-body a:hover { color: var(--green); }
+.session-body strong { color: var(--text); font-weight: 600; }
+.session-body code {
+  font-family: "Courier New", monospace;
+  font-size: 0.82em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.08em 0.4em;
+  border-radius: 4px;
+  color: var(--green);
+}
+.session-body blockquote {
+  border-left: 3px solid var(--green);
+  margin: 1.25rem 0;
+  padding: 0.75rem 1.1rem;
+  background: var(--surface);
+  border-radius: 0 6px 6px 0;
+}
+.session-body blockquote p { color: var(--text); margin: 0; }
+
 @media (max-width: 600px) {
   .b26-badge       { min-width: 90px; font-size: 0.7rem; padding: 0.75rem 0.6rem; }
   .b26-slot-title  { font-size: 0.875rem; }
