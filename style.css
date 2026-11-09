@@ -1597,6 +1597,16 @@ td {
 }
 .session-body blockquote p { color: var(--text); margin: 0; }
 
+.session-requirements h2 {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: none;
+  margin: 1.5rem 0 0.5rem;
+}
+.session-requirements h2:first-child { margin-top: 0; }
+
 @media (max-width: 600px) {
   .b26-badge       { min-width: 90px; font-size: 0.7rem; padding: 0.75rem 0.6rem; }
   .b26-slot-title  { font-size: 0.875rem; }
